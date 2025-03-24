@@ -7,3 +7,15 @@
 
 import SwiftUI
 import CoreData
+
+struct AddProductView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var productName = ""
+    @State private var productDescription = ""
+    @State private var productPrice = ""
+    @State private var productProvider = ""
+
+    
+    }
