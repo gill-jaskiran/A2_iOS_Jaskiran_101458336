@@ -31,7 +31,15 @@ struct AddProductView: View {
         newProduct.productDescription = productDescription
         newProduct.productProvider = productProvider
 
-      
+        if let price = Double(productPrice) {
+            newProduct.productPrice = price
+        }
+
+        do {
+            try context.save()
+            dismiss()
+        } catch {
+        }
     }
     
-    }
+}
