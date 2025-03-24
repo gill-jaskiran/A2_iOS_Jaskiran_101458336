@@ -35,7 +35,10 @@ struct PersistenceController {
             product.productPrice = Double(i) * 10.0
             product.productProvider = "Provider \(i)"
         }
-
-    
+        do {
+            try context.save()
+        } catch {
+            print("Error when trying to save the sample products: \(error.localizedDescription)")
+        }
     }
 }
