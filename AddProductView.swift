@@ -18,4 +18,20 @@ struct AddProductView: View {
     @State private var productProvider = ""
 
     
+    
+    
+    
+    
+    private func saveProduct() {
+        let context = viewContext
+
+        let newProduct = Product(context: context)
+        newProduct.productID = UUID().uuidString
+        newProduct.productName = productName
+        newProduct.productDescription = productDescription
+        newProduct.productProvider = productProvider
+
+      
+    }
+    
     }
