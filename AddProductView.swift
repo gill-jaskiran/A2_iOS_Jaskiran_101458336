@@ -39,6 +39,7 @@ struct AddProductView: View {
             try context.save()
             dismiss()
         } catch {
+            print("Error: Cannot save product: \(error.localizedDescription)")
         }
     }
     
