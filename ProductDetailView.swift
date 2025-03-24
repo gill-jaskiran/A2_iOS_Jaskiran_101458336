@@ -6,3 +6,10 @@
 //
 
 import SwiftUI
+
+struct ProductDetailView: View {
+    var product: Product
+    var body: some View {
+        
+    }
+}
