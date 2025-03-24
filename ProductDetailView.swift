@@ -19,5 +19,6 @@ struct ProductDetailView: View {
                 Text("Provider \(product.productProvider ?? "Unknown")")
             }
         }
+        .navigationTitle(product.productName ?? "Product Details")
     }
 }
