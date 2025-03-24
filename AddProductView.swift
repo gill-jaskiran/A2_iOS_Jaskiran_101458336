@@ -27,6 +27,12 @@ struct AddProductView: View {
                         .keyboardType(.decimalPad)
                     TextField("Input Product Provider", text: $productProvider)
                 }
+                Section {
+                    Button("Save Product") {
+                        saveProduct()
+                    }
+                    .disabled(productName.isEmpty || productDescription.isEmpty || productPrice.isEmpty || productProvider.isEmpty)
+                }
             }
         }
     }
