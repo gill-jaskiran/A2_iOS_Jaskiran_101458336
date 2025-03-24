@@ -17,10 +17,19 @@ struct AddProductView: View {
     @State private var productPrice = ""
     @State private var productProvider = ""
 
-    
-    
-    
-    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("Product Details")) {
+                    TextField("Input Product Name ", text: $productName)
+                    TextField("Input Product Description", text: $productDescription)
+                    TextField("Input Product Price - CAD", text: $productPrice)
+                        .keyboardType(.decimalPad)
+                    TextField("Input Product Provider", text: $productProvider)
+                }
+            }
+        }
+    }
     
     private func saveProduct() {
         let context = viewContext
