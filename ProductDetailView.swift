@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ProductDetailView: View {
     var product: Product
+
     var body: some View {
-        
+        Form {
+            Section(header: Text("Product Info")) {
+                Text("Name \(product.productName ?? "Unknown")")
+                Text("Description \(product.productDescription ?? "Unknown")")
+                Text("Price $\(product.productPrice, specifier: "%.2f")")
+                Text("Provider \(product.productProvider ?? "Unknown")")
+            }
+        }
     }
 }
