@@ -24,4 +24,18 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+    
+    private func addSampleProducts() {
+        let context = container.viewContext
+        for i in 1...10 {
+            let product = Product(context: context)
+            product.productID = UUID().uuidString
+            product.productName = "Product \(i)"
+            product.productDescription = "Description for product \(i)"
+            product.productPrice = Double(i) * 10.0
+            product.productProvider = "Provider \(i)"
+        }
+
+    
+    }
 }
