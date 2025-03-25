@@ -21,11 +21,11 @@ struct AddProductView: View {
         NavigationView {
             Form {
                 Section(header: Text("Product Details")) {
-                    TextField("Input Product Name ", text: $productName)
-                    TextField("Input Product Description", text: $productDescription)
-                    TextField("Input Product Price - CAD", text: $productPrice)
+                    TextField("Product Name ", text: $productName)
+                    TextField("Product Description", text: $productDescription)
+                    TextField("Product Price - CAD", text: $productPrice)
                         .keyboardType(.decimalPad)
-                    TextField("Input Product Provider", text: $productProvider)
+                    TextField("Product Provider", text: $productProvider)
                 }
 
                 Section {

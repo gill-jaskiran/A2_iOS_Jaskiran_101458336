@@ -13,10 +13,10 @@ struct ProductDetailView: View {
     var body: some View {
         Form {
             Section(header: Text("Product Info")) {
-                Text("Name \(product.productName ?? "Unknown")")
-                Text("Description \(product.productDescription ?? "Unknown")")
-                Text("Price $\(product.productPrice, specifier: "%.2f")")
-                Text("Provider \(product.productProvider ?? "Unknown")")
+                Text("Name: \(product.productName ?? "Unknown")")
+                Text("Description: \(product.productDescription ?? "Unknown")")
+                Text("Price: $\(product.productPrice, specifier: "%.2f")")
+                Text("Provider: \(product.productProvider ?? "Unknown")")
             }
         }
         .navigationTitle(product.productName ?? "Product Details")
