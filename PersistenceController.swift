@@ -7,10 +7,12 @@
 
 import CoreData
 
+// Implementing controller to manage the data stack
 struct PersistenceController {
     static let shared = PersistenceController()
 
     let container: NSPersistentContainer
+    // all default code and error handling when project was created
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Jaskiran_Gill_LabTest02")
         if inMemory {
@@ -23,5 +25,4 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
-    
 }
