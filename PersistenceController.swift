@@ -11,7 +11,6 @@ struct PersistenceController {
     static let shared = PersistenceController()
 
     let container: NSPersistentContainer
-
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Jaskiran_Gill_LabTest02")
         if inMemory {
@@ -25,20 +24,4 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
-    private func addSampleProducts() {
-        let context = container.viewContext
-        for i in 1...10 {
-            let product = Product(context: context)
-            product.productID = UUID().uuidString
-            product.productName = "Product \(i)"
-            product.productDescription = "Description for product \(i)"
-            product.productPrice = Double(i) * 10.0
-            product.productProvider = "Provider \(i)"
-        }
-        do {
-            try context.save()
-        } catch {
-            print("Error when trying to save the sample products: \(error.localizedDescription)")
-        }
-    }
 }
