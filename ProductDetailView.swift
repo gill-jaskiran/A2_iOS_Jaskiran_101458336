@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+// Displaying product detals
 struct ProductDetailView: View {
     var product: Product
 
     var body: some View {
+        // Creating a from for product details
         Form {
             Section(header: Text("Product Info")) {
                 Text("Name: \(product.productName ?? "Unknown")")
@@ -19,6 +21,7 @@ struct ProductDetailView: View {
                 Text("Provider: \(product.productProvider ?? "Unknown")")
             }
         }
+        // adding navigation title for product details
         .navigationTitle(product.productName ?? "Product Details")
     }
 }
