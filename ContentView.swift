@@ -63,6 +63,9 @@ struct ContentView: View {
                 let nameMatch = $0.productName?.lowercased().contains(searchField.lowercased()) ?? false
                 // Doing the same with the product description so it can be searched by description as well
                 let descriptionMatch = $0.productDescription?.lowercased().contains(searchField.lowercased()) ?? false
+                let providerMatch = $0.productProvider?.lowercased().contains(searchField.lowercased()) ?? false
+                let priceMatch = String(format: "%.2f", $0.productPrice).contains(searchField)
+                return nameMatch || descriptionMatch || providerMatch || priceMatch
             }
         }
     }
