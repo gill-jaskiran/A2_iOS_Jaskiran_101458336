@@ -53,19 +53,20 @@ struct ContentView: View {
     
     //filtering products displayedbased on search
     private var filteredProducts: [Product] {
-        // if search is empty all products are displayed
+        // If search is empty all products are displayed
         if searchField.isEmpty {
             return Array(products)
         } else {
             return products.filter {
-                // checking to see if search field contains search text without case sensitivity
+                // checking if the search field contains search text without case sensitivity
                 // if product name is nil, false is returned
-                $0.productName?.lowercased().contains(searchField.lowercased()) ?? false ||
-                // doing the same with the product discription so it can be searched by description as well
-                $0.productDescription?.lowercased().contains(searchField.lowercased()) ?? false
+                let nameMatch = $0.productName?.lowercased().contains(searchField.lowercased()) ?? false
+                // Doing the same with the product description so it can be searched by description as well
+                let descriptionMatch = $0.productDescription?.lowercased().contains(searchField.lowercased()) ?? false
             }
         }
     }
+
     
     // creating delete function
     // swiping left to delete
